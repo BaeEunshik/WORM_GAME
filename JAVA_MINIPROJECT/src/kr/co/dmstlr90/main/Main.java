@@ -135,12 +135,12 @@ public class Main {
 	
 	// 지렁이 성장 함수
 	public static void growUp(ArrayList<Worm> wormArr) {
-		Worm tmpTail = wormArr.get(wormArr.size()-1);
+		Worm tmpTail = wormArr.get(wormArr.size()-1);		
 		int y = tmpTail.getY();
 		int x = tmpTail.getX();
-		String direction = tmpTail.getDirection();
+		String direction = tmpTail.getDirection();			
 		
-		if(direction == Move.UP) {
+		if(direction == Move.UP) {							
 			y+=1;
 		}else if(direction == Move.DOWN) {
 			y-=1;
@@ -227,11 +227,7 @@ public class Main {
 	// 현재 위치 저장 함수
 	public static void savePosition(ArrayList<Worm> wormArr, ArrayList<int[]> savePosArr) {
 		//위치배열 초기화
-		for (int i = 0; i < savePosArr.size(); i++) {
-			if(savePosArr.get(i) != null) {
-				savePosArr.remove(i);
-			}
-		}
+		savePosArr.clear();
 		//위치배열 재할당
 		for (int i = 0; i < wormArr.size(); i++) {
 			int wormY = wormArr.get(i).getY();
